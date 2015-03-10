@@ -12,5 +12,25 @@ function testItAll(){
 
 }
 
+function testItAllAgain(){
+	
+	global $conn;
+	
+	$query = "SELECT * FROM public.dummytable";
+	$res = $conn->query($query);
+	//$hospitals = $hos_res->fetchAll();
+	$rows = $res->fetchAll();
+	
+	echo "<br><br>";
+
+	foreach($rows as $ind => $val){
+		print_r($val);
+		echo "<br><br>";
+	}
+	
+	return "all done!!";
+
+}
+
 
 ?>
